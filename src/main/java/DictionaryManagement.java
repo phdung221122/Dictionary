@@ -13,8 +13,7 @@ public class DictionaryManagement {
             String vietnamese = input.nextLine();
             Word temp = new Word(english, vietnamese);
             this.myDictionary.words.add(temp);
-            System.out.println(temp.getWord_target() + " " + temp.getWord_explain());
+            //System.out.println(temp.getWord_target() + " " + temp.getWord_explain());
         }
     }
-
 }
