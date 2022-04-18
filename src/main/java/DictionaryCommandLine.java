@@ -1,3 +1,5 @@
+import java.io.IOException;
+
 public class DictionaryCommandLine {
     static DictionaryManagement myManage = new DictionaryManagement();
     public static void showAllWords(Dictionary myDictionary) {
@@ -13,8 +15,13 @@ public class DictionaryCommandLine {
         showAllWords(myManage.myDictionary);
     }
 
-    /*public static void main(String args[]) {
-        DictionaryCommandLine.dictionaryBasic();
+ /*   public static void main(String args[]) {
+        //DictionaryCommandLine.dictionaryBasic();
+        try {
+            DictionaryCommandLine.myManage.insertFromFile();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }*/
 }
 
