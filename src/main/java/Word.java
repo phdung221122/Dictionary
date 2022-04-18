@@ -17,4 +17,9 @@ public class Word {
     public String getWord_target() {
         return word_target;
     }
+
+    public Word(String x, String y) {
+        this.word_target = x;
+        this.word_explain = y;
+    }
 }
