@@ -15,13 +15,13 @@ public class DictionaryCommandLine {
         showAllWords(myManage.myDictionary);
     }
 
- /*   public static void main(String args[]) {
+    public static void main(String args[]) {
         //DictionaryCommandLine.dictionaryBasic();
         try {
             DictionaryCommandLine.myManage.insertFromFile();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-    }*/
+    }
 }
 

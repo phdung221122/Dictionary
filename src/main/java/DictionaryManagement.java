@@ -1,6 +1,4 @@
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
 import java.util.Scanner;
 
 public class DictionaryManagement {
@@ -21,17 +19,18 @@ public class DictionaryManagement {
     }
 
     public void insertFromFile() throws IOException {
-        FileInputStream myFile = new FileInputStream("C:\\Users\\ADMIN\\Documents\\Java shit\\Dictionary\\dictionaries.txt");
-        try {
-            int i = 0;
-            while ((i = myFile.read()) != -1) {
-                System.out.print((char) i);
-            }
-            myFile.close();
-        } catch (Exception e) {
-            System.out.println(e);
-        } finally {
-            myFile.close();
+        File fileDir = new File("C:\\Users\\ADMIN\\Documents\\Java shit\\Dictionary\\dictionaries.txt");
+
+        BufferedReader in = new BufferedReader(
+                new InputStreamReader(
+                        new FileInputStream(fileDir), "UTF8"));
+
+        String str;
+
+        while ((str = in.readLine()) != null) {
+            System.out.println(str);
         }
+
+        in.close();
     }
 }
