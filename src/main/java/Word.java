@@ -1,6 +1,6 @@
 public class Word {
-    private String word_target;
-    private String word_explain;
+    private String word_target;//từ mới tiếng anh
+    private String word_explain;//giải nghĩa tiếng việt
 
     public void setWord_explain(String word_explain) {
         this.word_explain = word_explain;
