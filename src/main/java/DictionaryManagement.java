@@ -45,9 +45,9 @@ public class DictionaryManagement {
         Scanner inputWord = new Scanner(System.in);
         System.out.println("Nhập vào từ bạn muốn tra");
         String findWord = inputWord.nextLine();
-        for(int i = 0; i<myDictionary.words.size(); i++){
-            if(findWord.compareTo())
-        }
+        Word temp = new Word(findWord, "0");
+        int i = myDictionary.words.indexOf(temp);
+        System.out.println(i);
     }
 
 }

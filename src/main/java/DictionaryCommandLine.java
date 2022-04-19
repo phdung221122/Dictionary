@@ -21,10 +21,14 @@ public class DictionaryCommandLine {
 
 
     //hàm gọi hàm insertFromFile(),showAllWords() và dictionaryLookup()
-    public static dictionaryAdvanced(){
-        myManage.insertFromFile();
+    public static void dictionaryAdvanced(){
+        try {
+            myManage.insertFromFile();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
         showAllWords(myManage.myDictionary);
-        dictionaryLookup();
+        myManage.dictionaryLookup();
     }
 
     public static void main(String args[]) {
@@ -32,6 +36,7 @@ public class DictionaryCommandLine {
         try {
             DictionaryCommandLine.myManage.insertFromFile();
             DictionaryCommandLine.showAllWords(myManage.myDictionary);
+            DictionaryCommandLine.myManage.dictionaryLookup();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
