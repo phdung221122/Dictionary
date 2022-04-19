@@ -45,9 +45,15 @@ public class DictionaryManagement {
         Scanner inputWord = new Scanner(System.in);
         System.out.println("Nhập vào từ bạn muốn tra");
         String findWord = inputWord.nextLine();
+        findWord = findWord.trim();
         Word temp = new Word(findWord, "0");
         int i = myDictionary.words.indexOf(temp);
-        System.out.println(i);
+        if (i < 0) {
+            System.out.println("Không có từ bạn nhập trong từ điển của tôi");
+            return;
+        } else {
+            System.out.println("Dịch: " + myDictionary.words.get(i).getWord_explain());
+        }
     }
 
 }
