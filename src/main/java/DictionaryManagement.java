@@ -32,6 +32,9 @@ public class DictionaryManagement {
 
         while ((str = in.readLine()) != null) {
             System.out.println(str);
+            String[] parts = str.split("-");
+            Word temp = new Word(parts[0], parts[1]);
+            this.myDictionary.addWord(temp);
         }
 
         in.close();
