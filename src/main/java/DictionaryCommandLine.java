@@ -19,6 +19,14 @@ public class DictionaryCommandLine {
         showAllWords(myManage.myDictionary);
     }
 
+
+    //hàm gọi hàm insertFromFile(),showAllWords() và dictionaryLookup()
+    public static dictionaryAdvanced(){
+        myManage.insertFromFile();
+        showAllWords(myManage.myDictionary);
+        dictionaryLookup();
+    }
+
     public static void main(String args[]) {
         //DictionaryCommandLine.dictionaryBasic();
         try {
