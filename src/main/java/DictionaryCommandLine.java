@@ -23,6 +23,7 @@ public class DictionaryCommandLine {
         //DictionaryCommandLine.dictionaryBasic();
         try {
             DictionaryCommandLine.myManage.insertFromFile();
+            DictionaryCommandLine.showAllWords(myManage.myDictionary);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
