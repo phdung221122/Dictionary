@@ -7,8 +7,10 @@ public class DictionaryManagement {
     void insertFromCommandline() {
         Scanner input = new Scanner(System.in);
         System.out.println("Nhập số lượng từ vựng:");
-        int repeat = input.nextInt();
-        String fake = input.nextLine();
+        int repeat = input.nextInt();//số lượng từ nhập vào bán phím
+        String fake = input.nextLine();//để bỏ qua dòng trống
+
+        //nhận vào vào từ tiếng anh và giải nghĩa tiếng việt
         for (int i = 0; i < repeat; i++) {
             String english = input.nextLine();
             String vietnamese = input.nextLine();
