@@ -18,7 +18,6 @@ public class DictionaryManagement {
             String vietnamese = input.nextLine();
             Word temp = new Word(english, vietnamese);
             this.myDictionary.words.add(temp);
-            //System.out.println(temp.getWord_target() + " " + temp.getWord_explain());
         }
         input.close();
     }
@@ -30,16 +29,12 @@ public class DictionaryManagement {
         BufferedReader in = new BufferedReader(
                 new InputStreamReader(
                         new FileInputStream(fileDir), StandardCharsets.UTF_8));
-
         String str;
-
         while ((str = in.readLine()) != null) {
-            //System.out.println(str);
             String[] parts = str.split("-");
             Word temp = new Word(parts[0], parts[1]);
             this.myDictionary.addWord(temp);
         }
-
         in.close();
     }
 
@@ -75,7 +70,6 @@ public class DictionaryManagement {
            for (int i = 0; i < myDictionary.words.size(); i++) {
                myWriter.write(myDictionary.words.get(i).getWord_target() + "-" + myDictionary.words.get(i).getWord_explain());
                myWriter.write("\n");
-               //System.out.println(myDictionary.words.get(i).getWord_target() + "-" + myDictionary.words.get(i).getWord_explain());
            }
            System.out.println("\nđã viết thành công");
            myWriter.close();

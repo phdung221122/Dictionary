@@ -6,4 +6,27 @@ evening-buổi tối
 dinner-bữa tối
 lunch-bữa trưa
 breakfast-bữa sáng
+table-bàn
+chair-ghế
+pen-bút
+phone-điện thoại
+computer-máy tính
+laptop-máy tính xách tay
+fan-quạt
+bed-giường
+lion-sư tử
+tiger-hổ
+cat-mèo
+dog-chó
+bird-chim
+number-số
+paper-giấy
+write-viết
+look-nhìn
+fast-nhanh
+slow-chậm
+eat-ăn
+school-trường học
+student-học sinh
+friend-bạn bè
 class-lớp học

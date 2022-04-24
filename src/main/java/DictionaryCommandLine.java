@@ -35,7 +35,6 @@ public class DictionaryCommandLine {
         System.out.print("...");
     }
 
-
     //hàm gọi hàm insertFromFile(),showAllWords() và dictionaryLookup()
     public static void dictionaryAdvanced(){
         try {
@@ -48,7 +47,6 @@ public class DictionaryCommandLine {
     }
 
     public static void main(String[] args) {
-        //DictionaryCommandLine.dictionaryBasic();
         try {
             DictionaryCommandLine.myManage.insertFromFile();
             Word x = new Word("class", "lớp học");
