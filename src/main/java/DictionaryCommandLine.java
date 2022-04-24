@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.util.Scanner;
 
 public class DictionaryCommandLine {
     static DictionaryManagement myManage = new DictionaryManagement();
@@ -17,6 +18,21 @@ public class DictionaryCommandLine {
     public static void dictionaryBasic() {
         myManage.insertFromCommandline();
         showAllWords(myManage.myDictionary);
+    }
+
+    //tìm các từ tiếng Anh chứa các kí tự đã nhập
+    public static void dictionarySearcher() {
+        System.out.println("Nhập:");
+        Scanner myScan = new Scanner(System.in);
+        String word = myScan.nextLine().toLowerCase();
+        System.out.print("Danh sách các từ vựng bắt đầu bằng " + word.toUpperCase() + ": ");
+        for(int i = 0; i < myManage.myDictionary.words.size(); i++) {
+            int temp = myManage.myDictionary.words.get(i).getWord_target().indexOf(word);
+            if(temp > -1) {
+                System.out.print(myManage.myDictionary.words.get(i).getWord_target() + ", ");
+            }
+        }
+        System.out.print("...");
     }
 
 
@@ -39,6 +55,7 @@ public class DictionaryCommandLine {
             DictionaryCommandLine.myManage.addWord(x);
             DictionaryCommandLine.showAllWords(myManage.myDictionary);
             DictionaryCommandLine.myManage.dictionaryLookup();
+            DictionaryCommandLine.dictionarySearcher();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

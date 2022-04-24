@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class DictionaryManagement {
     protected Dictionary myDictionary = new Dictionary();
 
+    //nhập từ thủ công từ CommandLine
     void insertFromCommandline() {
         Scanner input = new Scanner(System.in);
         System.out.println("Nhập số lượng từ vựng:");
@@ -21,6 +22,7 @@ public class DictionaryManagement {
         input.close();
     }
 
+    //nhập từ sử dụng file
     public void insertFromFile() throws IOException {
         File fileDir = new File("C:\\Users\\ADMIN\\Documents\\Java shit\\Dictionary\\dictionaries.txt");
 
@@ -40,7 +42,7 @@ public class DictionaryManagement {
         in.close();
     }
 
-    //hàm tra cứu từ điển bằng dòng lệnh
+    //hàm tra cứu từ điển từ tiếng anh trả về từ tiếng việt bằng dòng lệnh
     public void dictionaryLookup() {
         Scanner inputWord = new Scanner(System.in);
         System.out.println("Nhập vào từ bạn muốn tra");
@@ -56,10 +58,12 @@ public class DictionaryManagement {
         }
     }
 
+    //thêm từ
     public void addWord(Word x) {
         myDictionary.words.add(x);
     }
 
+    //xóa từ
     public void removeWord(Word x) {
         myDictionary.words.remove(x);
     }
