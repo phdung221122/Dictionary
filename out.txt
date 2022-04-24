@@ -1,0 +1,9 @@
+hello-xin chào
+goodbye-tạm biệt
+morning-buổi sáng
+afternoon-buổi chiều
+evening-buổi tối
+dinner-bữa tối
+lunch-bữa trưa
+breakfast-bữa sáng
+class-lớp học

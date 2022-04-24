@@ -47,7 +47,7 @@ public class DictionaryCommandLine {
         myManage.dictionaryLookup();
     }
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         //DictionaryCommandLine.dictionaryBasic();
         try {
             DictionaryCommandLine.myManage.insertFromFile();
@@ -56,6 +56,7 @@ public class DictionaryCommandLine {
             DictionaryCommandLine.showAllWords(myManage.myDictionary);
             DictionaryCommandLine.myManage.dictionaryLookup();
             DictionaryCommandLine.dictionarySearcher();
+            DictionaryCommandLine.myManage.dictionaryExportToFile();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

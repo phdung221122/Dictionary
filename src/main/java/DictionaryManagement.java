@@ -1,6 +1,7 @@
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
-
+import java.io.FileWriter;
 public class DictionaryManagement {
     protected Dictionary myDictionary = new Dictionary();
 
@@ -22,13 +23,13 @@ public class DictionaryManagement {
         input.close();
     }
 
-    //nhập từ sử dụng file
+    //nhập từ sử dụng file dictionaries trong thư mục Dictionary
     public void insertFromFile() throws IOException {
         File fileDir = new File("dictionaries.txt");
 
         BufferedReader in = new BufferedReader(
                 new InputStreamReader(
-                        new FileInputStream(fileDir), "UTF8"));
+                        new FileInputStream(fileDir), StandardCharsets.UTF_8));
 
         String str;
 
@@ -52,7 +53,6 @@ public class DictionaryManagement {
         int i = myDictionary.words.indexOf(temp);
         if (i < 0) {
             System.out.println("Không có từ bạn nhập trong từ điển của tôi");
-            return;
         } else {
             System.out.println("Dịch: " + myDictionary.words.get(i).getWord_explain());
         }
@@ -66,6 +66,23 @@ public class DictionaryManagement {
     //xóa từ
     public void removeWord(Word x) {
         myDictionary.words.remove(x);
+    }
+
+    //xuất dữ liệu ra file out.txt file này đc lưu ở thư mục Dictionary
+    public void dictionaryExportToFile() {
+       try {
+           FileWriter myWriter = new FileWriter("out.txt");
+           for (int i = 0; i < myDictionary.words.size(); i++) {
+               myWriter.write(myDictionary.words.get(i).getWord_target() + "-" + myDictionary.words.get(i).getWord_explain());
+               myWriter.write("\n");
+               //System.out.println(myDictionary.words.get(i).getWord_target() + "-" + myDictionary.words.get(i).getWord_explain());
+           }
+           System.out.println("\nđã viết thành công");
+           myWriter.close();
+       } catch (IOException e) {
+           System.out.println(e.getMessage());
+           e.printStackTrace();
+       }
     }
 
 }
