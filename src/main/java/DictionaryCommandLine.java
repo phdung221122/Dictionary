@@ -25,7 +25,7 @@ public class DictionaryCommandLine {
         System.out.println("Nhập:");
         Scanner myScan = new Scanner(System.in);
         String word = myScan.nextLine().toLowerCase();
-        System.out.print("Danh sách các từ vựng bắt đầu bằng " + word.toUpperCase() + ": ");
+        System.out.print("Danh sách các từ vựng có chứa " + word.toUpperCase() + ": ");
         for(int i = 0; i < myManage.myDictionary.words.size(); i++) {
             int temp = myManage.myDictionary.words.get(i).getWord_target().indexOf(word);
             if(temp > -1) {

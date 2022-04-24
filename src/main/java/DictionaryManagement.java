@@ -24,7 +24,7 @@ public class DictionaryManagement {
 
     //nhập từ sử dụng file
     public void insertFromFile() throws IOException {
-        File fileDir = new File("C:\\Users\\ADMIN\\Documents\\Java shit\\Dictionary\\dictionaries.txt");
+        File fileDir = new File("dictionaries.txt");
 
         BufferedReader in = new BufferedReader(
                 new InputStreamReader(
@@ -33,7 +33,7 @@ public class DictionaryManagement {
         String str;
 
         while ((str = in.readLine()) != null) {
-            System.out.println(str);
+            //System.out.println(str);
             String[] parts = str.split("-");
             Word temp = new Word(parts[0], parts[1]);
             this.myDictionary.addWord(temp);
