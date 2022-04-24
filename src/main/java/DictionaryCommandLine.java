@@ -35,6 +35,8 @@ public class DictionaryCommandLine {
         //DictionaryCommandLine.dictionaryBasic();
         try {
             DictionaryCommandLine.myManage.insertFromFile();
+            Word x = new Word("class", "lớp học");
+            DictionaryCommandLine.myManage.addWord(x);
             DictionaryCommandLine.showAllWords(myManage.myDictionary);
             DictionaryCommandLine.myManage.dictionaryLookup();
         } catch (IOException e) {

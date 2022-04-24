@@ -56,4 +56,12 @@ public class DictionaryManagement {
         }
     }
 
+    public void addWord(Word x) {
+        myDictionary.words.add(x);
+    }
+
+    public void removeWord(Word x) {
+        myDictionary.words.remove(x);
+    }
+
 }
