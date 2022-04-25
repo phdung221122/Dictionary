@@ -2,13 +2,17 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class inputWord implements ActionListener {
-    private DictionaryApplication word;
-    public inputWord(DictionaryApplication word) {
-        this.word = word;
+    private DictionaryApplication temp;
+    public inputWord(DictionaryApplication temp) {
+        this.temp = temp;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        System.out.println("test succeed");
+        String search = e.getActionCommand();
+        temp.input=temp.enterYourWord.getText();
+
+            temp.answer.setText(temp.input);
+
     }
 }
