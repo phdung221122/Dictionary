@@ -4,8 +4,7 @@ import java.awt.event.ActionListener;
 
 public class DictionaryApplication extends JFrame {
     private JButton searchButton;
-    public String input;
-    public String output;
+
     ActionListener searchClick = new inputWord(this);
     JTextField enterYourWord = new JTextField(60);
     JTextField answer = new JTextField();
@@ -35,11 +34,6 @@ public class DictionaryApplication extends JFrame {
         wordPanel.setLayout(new BorderLayout());
         wordPanel.add(enterYourWord, BorderLayout.CENTER);
 
-
-        String temp = enterYourWord.getText();
-        if(temp.equals("test")){
-            System.out.println("test succeed");
-        }
 
         searchButton = new JButton("Search");//nút search
         searchButton.addActionListener(searchClick);//add listener
