@@ -1,6 +1,8 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
+import java.net.URL;
+
 
 public class DictionaryApplication extends JFrame {
     private JButton searchButton;
@@ -23,6 +25,13 @@ public class DictionaryApplication extends JFrame {
         this.setSize(400, 400);//chọn kích cỡ cho giao diện
         this.setLocationRelativeTo(null);//căn giữa cửa sổ giao diện
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);//tắt hoàn toàn chương trình khi close
+
+
+        //tạo icon cho giao diện
+        Image img = Toolkit.getDefaultToolkit().createImage("DictionaryIcon.png");
+        this.setIconImage(img);
+
+
         this.arrangeDisplay();
     }
 
