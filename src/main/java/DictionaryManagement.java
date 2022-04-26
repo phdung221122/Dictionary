@@ -57,13 +57,13 @@ public class DictionaryManagement {
         findWord = findWord.trim();
         Word temp = new Word(findWord, "0");
         int i = myDictionary.words.indexOf(temp);
+        String result = null;
         if (i < 0) {
-            System.out.println("Không có từ bạn nhập trong từ điển của tôi");
-            return null;
+            result = "*Không có từ bạn nhập trong từ điển của tôi*";
         } else {
-            System.out.println("Dịch: " + myDictionary.words.get(i).getWord_explain());
+            result =  myDictionary.words.get(i).getWord_explain();
         }
-        return myDictionary.words.get(i).getWord_explain();
+        return result;
     }
     //thêm từ
     public void addWord(Word x) {
