@@ -53,6 +53,16 @@ public class DictionaryManagement {
         }
     }
 
+    public void dictionaryLookup(String findWord) {
+        findWord = findWord.trim();
+        Word temp = new Word(findWord, "0");
+        int i = myDictionary.words.indexOf(temp);
+        if (i < 0) {
+            System.out.println("Không có từ bạn nhập trong từ điển của tôi");
+        } else {
+            System.out.println("Dịch: " + myDictionary.words.get(i).getWord_explain());
+        }
+    }
     //thêm từ
     public void addWord(Word x) {
         myDictionary.words.add(x);
