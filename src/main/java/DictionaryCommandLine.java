@@ -46,6 +46,10 @@ public class DictionaryCommandLine {
         myManage.dictionaryLookup();
     }
 
+    public void test() {
+        String test = "Hello";
+    }
+
     public static void main(String[] args) {
         try {
             DictionaryCommandLine.myManage.insertFromFile();
