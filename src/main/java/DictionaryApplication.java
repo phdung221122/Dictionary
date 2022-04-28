@@ -26,11 +26,9 @@ public class DictionaryApplication extends JFrame {
         this.setLocationRelativeTo(null);//căn giữa cửa sổ giao diện
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);//tắt hoàn toàn chương trình khi close
 
-
         //tạo icon cho giao diện
         Image img = Toolkit.getDefaultToolkit().createImage("DictionaryIcon.png");
         this.setIconImage(img);
-
 
         this.arrangeDisplay();
     }

@@ -20,6 +20,10 @@ public class inputWord implements ActionListener {
         }
 
 
-        temp.answer.setText(DictionaryCommandLine.myManage.dictionaryLookup(temp.enterYourWord.getText()));
+        try {
+            temp.answer.setText(Translator.translate("en", "vi", temp.enterYourWord.getText()));
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
     }
 }
