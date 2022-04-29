@@ -1,66 +1,79 @@
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.net.URL;
 
 
 public class DictionaryApplication extends JFrame {
-    private JButton searchButton;
-
+    public JPanel contentPane;
+    public JTextField enterYourWord;
+    public JLabel answer = new JLabel("\r\n");
+    JButton searchButton = new JButton("");
     ActionListener searchClick = new inputWord(this);
-    JTextField enterYourWord = new JTextField(60);
-    JLabel answer = new JLabel();
-
-
-    //constructor
-    public DictionaryApplication() {
-        this.runApplication();
-
-        this.setVisible(true);//hiện cửa sổ ra màn hình (tương tự hàm renderPresent trong SDL c++)
-    }
-
-    //chạy giao diện đồ họa
-    public void runApplication() {
-        this.setTitle("Dictionary");//tên giao diện
-        this.setSize(400, 400);//chọn kích cỡ cho giao diện
-        this.setLocationRelativeTo(null);//căn giữa cửa sổ giao diện
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);//tắt hoàn toàn chương trình khi close
-
-        //tạo icon cho giao diện
-        Image img = Toolkit.getDefaultToolkit().createImage("DictionaryIcon.png");
-        this.setIconImage(img);
-
-        this.arrangeDisplay();
-    }
-
-    //bố trí bố cục giao diện
-    public void arrangeDisplay(){
-        //tạo 1 khoảng để nhập từ
-
-        JPanel wordPanel = new JPanel();//tạo panel của từ muốn tra
-        wordPanel.setLayout(new BorderLayout());
-        wordPanel.add(enterYourWord, BorderLayout.CENTER);
-
-
-        searchButton = new JButton("Search");//nút search
-
-        JPanel buttonPanel = new JPanel();//panel của nút search
-        buttonPanel.setLayout(new FlowLayout());
-        buttonPanel.add(searchButton);
-
-
-
-
-        this.setLayout(new BorderLayout());
-        this.add(wordPanel, BorderLayout.NORTH);
-        this.add(buttonPanel, BorderLayout.CENTER);
-        this.add(answer, BorderLayout.SOUTH);
-
-    }
-
-
+    /**
+     * Launch the application.
+     */
     public static void main(String[] args) {
-        DictionaryApplication test = new DictionaryApplication();
+        EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                try {
+                    DictionaryApplication frame = new DictionaryApplication();
+                    frame.setVisible(true);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
 
+    /**
+     * Create the frame.
+     */
+    public DictionaryApplication() {
+        setBackground(Color.WHITE);
+        setIconImage(Toolkit.getDefaultToolkit().getImage("dictionaryIcon.png"));
+        setTitle("VFlat Dictionary");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setBounds(100, 100, 500, 600);
+        setResizable(false);
+        contentPane = new JPanel();
+        contentPane.setBackground(Color.WHITE);
+        contentPane.setForeground(Color.CYAN);
+        contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+        setContentPane(contentPane);
+        contentPane.setLayout(null);
+
+        JPanel panel = new JPanel();
+        panel.setBounds(27, 107, 408, 35);
+        contentPane.add(panel);
+        panel.setLayout(new BorderLayout(0, 0));
+
+        JLabel alphabetImage = new JLabel("");
+        panel.add(alphabetImage, BorderLayout.WEST);
+        alphabetImage.setIcon(new ImageIcon("abc.png"));
+
+        enterYourWord = new JTextField();
+        panel.add(enterYourWord, BorderLayout.CENTER);
+        enterYourWord.setColumns(10);
+
+
+        panel.add(searchButton, BorderLayout.EAST);
+        searchButton.setIcon(new ImageIcon("searchButton.png"));
+        searchButton.addActionListener(searchClick);
+
+        JLabel vflatLogo = new JLabel("");
+        vflatLogo.setIcon(new ImageIcon("VFlat.png"));
+        vflatLogo.setBounds(-146, 0, 717, 199);
+        contentPane.add(vflatLogo);
+
+
+        answer.setBounds(68, 209, 381, 35);
+        contentPane.add(answer);
+
+        JLabel arrowHead = new JLabel("");
+        arrowHead.setIcon(new ImageIcon("definition.png"));
+        arrowHead.setBounds(10, 203, 48, 41);
+        contentPane.add(arrowHead);
     }
 }
