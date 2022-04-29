@@ -8,8 +8,7 @@ import java.net.URLEncoder;
 public class Translator {
 
     public static void main(String[] args) throws IOException {
-        String text = "Hello world!";
-        //Translated text: Hallo Welt!
+        String text = "Good morning!";
         System.out.println("Translated text: " + translate("en", "vi", text));
     }
 
