@@ -9,7 +9,7 @@ public class DictionaryApplication extends JFrame {
 
     ActionListener searchClick = new inputWord(this);
     JTextField enterYourWord = new JTextField(60);
-    JTextField answer = new JTextField();
+    JLabel answer = new JLabel();
 
 
     //constructor
