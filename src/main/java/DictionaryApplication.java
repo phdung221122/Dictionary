@@ -43,7 +43,6 @@ public class DictionaryApplication extends JFrame {
 
 
         searchButton = new JButton("Search");//nút search
-        searchButton.addActionListener(searchClick);//add listener
 
         JPanel buttonPanel = new JPanel();//panel của nút search
         buttonPanel.setLayout(new FlowLayout());
