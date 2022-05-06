@@ -8,8 +8,10 @@ import java.net.URL;
 public class DictionaryApplication extends JFrame {
     public JPanel contentPane;
     public JTextField enterYourWord;
-    public JLabel answer = new JLabel("\r\n");
+    //public JLabel answer = new JLabel("\r\n");
+    JTextPane answer = new JTextPane();
     JButton searchButton = new JButton("");
+    Font font = new Font("Arial", Font.BOLD, 12);
     ActionListener searchClick = new inputWord(this);
     /**
      * Launch the application.
@@ -56,6 +58,7 @@ public class DictionaryApplication extends JFrame {
         enterYourWord = new JTextField();
         panel.add(enterYourWord, BorderLayout.CENTER);
         enterYourWord.setColumns(10);
+        enterYourWord.setFont(font);
 
 
         panel.add(searchButton, BorderLayout.EAST);
@@ -68,12 +71,17 @@ public class DictionaryApplication extends JFrame {
         contentPane.add(vflatLogo);
 
 
-        answer.setBounds(68, 209, 381, 35);
+        //answer.setBounds(68, 209, 381, 35);
+        //contentPane.add(answer);
+        answer.setBounds(68, 268, 367, 285);
         contentPane.add(answer);
+        answer.setFont(font);
+
 
         JLabel arrowHead = new JLabel("");
         arrowHead.setIcon(new ImageIcon("definition.png"));
-        arrowHead.setBounds(10, 203, 48, 41);
+        //arrowHead.setBounds(10, 203, 48, 41);
+        arrowHead.setBounds(10, 263, 48, 41);
         contentPane.add(arrowHead);
     }
 }
