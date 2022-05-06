@@ -76,6 +76,7 @@ public class DictionaryApplication extends JFrame {
         answer.setBounds(68, 268, 367, 285);
         contentPane.add(answer);
         answer.setFont(font);
+        answer.setEditable(false);
 
 
         JLabel arrowHead = new JLabel("");
