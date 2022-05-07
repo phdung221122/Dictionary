@@ -63,11 +63,6 @@ public class DictionaryApplication extends JFrame {
         enterYourWordScrollPane.setViewportView(enterYourWord);
         enterYourWord.setFont(font);
 
-
-        //panel.add(searchButton, BorderLayout.EAST);
-        //searchButton.setIcon(new ImageIcon("searchButton.png"));
-        //searchButton.addActionListener(searchClick);
-
         //panel lưu 2 nút bấm dịch
         JPanel searchPanel = new JPanel();
         searchPanel.setBackground(Color.WHITE);
@@ -78,13 +73,13 @@ public class DictionaryApplication extends JFrame {
         //nút dịch tiếng việt sang anh
         JButton viSearch = new JButton("Vi to En");
         searchPanel.add(viSearch, BorderLayout.EAST);
-        viSearch.setFont(new Font("Arial", Font.BOLD, 10));
+        viSearch.setFont(font);
         viSearch.addActionListener(searchClick);
 
         //nút dịch tiếng anh sang việt
         JButton enSearch = new JButton("En to Vi");
         searchPanel.add(enSearch, BorderLayout.WEST);
-        enSearch.setFont(new Font("Arial", Font.BOLD, 10));
+        enSearch.setFont(font);
         enSearch.addActionListener(searchClick);
 
         JLabel vflatLogo = new JLabel("");
