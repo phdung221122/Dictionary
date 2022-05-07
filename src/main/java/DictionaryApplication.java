@@ -8,7 +8,6 @@ import java.net.URL;
 public class DictionaryApplication extends JFrame {
     public JPanel contentPane;
     public JTextPane enterYourWord = new JTextPane();
-    //public JLabel answer = new JLabel("\r\n");
     JTextPane answer = new JTextPane();
     JButton searchButton = new JButton("");
     Font font = new Font("Arial", Font.BOLD, 12);
@@ -55,10 +54,10 @@ public class DictionaryApplication extends JFrame {
         panel.add(alphabetImage, BorderLayout.WEST);
         alphabetImage.setIcon(new ImageIcon("abc.png"));
 
+        //tạo 1 scroll pane cho thanh nhập từ
         JScrollPane enterYourWordScrollPane = new JScrollPane();
         panel.add(enterYourWordScrollPane, BorderLayout.CENTER);
 
-        //panel.add(enterYourWord, BorderLayout.CENTER);
         enterYourWordScrollPane.setViewportView(enterYourWord);
         enterYourWord.setFont(font);
 
@@ -77,17 +76,16 @@ public class DictionaryApplication extends JFrame {
         answerScrollPane.setBounds(68, 268, 367, 285);
         contentPane.add(answerScrollPane);
 
-        //answer.setBounds(68, 209, 381, 35);
-        //contentPane.add(answer);
         answer.setBounds(68, 268, 367, 285);
         contentPane.add(answer);
         answer.setFont(font);
         answer.setEditable(false);
         answerScrollPane.setViewportView(answer);
 
+
+        //mũi tên chỉ vào kết quả
         JLabel arrowHead = new JLabel("");
         arrowHead.setIcon(new ImageIcon("definition.png"));
-        //arrowHead.setBounds(10, 203, 48, 41);
         arrowHead.setBounds(10, 263, 48, 41);
         contentPane.add(arrowHead);
     }
