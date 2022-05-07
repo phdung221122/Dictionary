@@ -21,7 +21,12 @@ public class inputWord implements ActionListener {
 
 
         try {
-            temp.answer.setText(Translator.translate("en", "vi", temp.enterYourWord.getText()));
+            if(search.equals("En to Vi")) {
+                temp.answer.setText(Translator.translate("en", "vi", temp.enterYourWord.getText()));
+            }
+            if(search.equals("Vi to En")) {
+                temp.answer.setText(Translator.translate("vi", "en", temp.enterYourWord.getText()));
+            }
         } catch (IOException ex) {
             ex.printStackTrace();
         }

@@ -9,7 +9,8 @@ public class DictionaryApplication extends JFrame {
     public JPanel contentPane;
     public JTextPane enterYourWord = new JTextPane();
     JTextPane answer = new JTextPane();
-    JButton searchButton = new JButton("");
+    JButton searchButton = new JButton("Search Button");
+    JLabel test = new JLabel();
     Font font = new Font("Arial", Font.BOLD, 12);
     ActionListener searchClick = new inputWord(this);
     /**
@@ -34,6 +35,7 @@ public class DictionaryApplication extends JFrame {
     public DictionaryApplication() {
         setBackground(Color.WHITE);
         setIconImage(Toolkit.getDefaultToolkit().getImage("dictionaryIcon.png"));
+
         setTitle("VFlat Dictionary");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 500, 600);
@@ -62,9 +64,28 @@ public class DictionaryApplication extends JFrame {
         enterYourWord.setFont(font);
 
 
-        panel.add(searchButton, BorderLayout.EAST);
-        searchButton.setIcon(new ImageIcon("searchButton.png"));
-        searchButton.addActionListener(searchClick);
+        //panel.add(searchButton, BorderLayout.EAST);
+        //searchButton.setIcon(new ImageIcon("searchButton.png"));
+        //searchButton.addActionListener(searchClick);
+
+        //panel lưu 2 nút bấm dịch
+        JPanel searchPanel = new JPanel();
+        searchPanel.setBackground(Color.WHITE);
+        searchPanel.setBounds(76, 220, 306, 35);
+        contentPane.add(searchPanel);
+        searchPanel.setLayout(new BorderLayout(0, 0));
+
+        //nút dịch tiếng việt sang anh
+        JButton viSearch = new JButton("Vi to En");
+        searchPanel.add(viSearch, BorderLayout.EAST);
+        viSearch.setFont(new Font("Arial", Font.BOLD, 10));
+        viSearch.addActionListener(searchClick);
+
+        //nút dịch tiếng anh sang việt
+        JButton enSearch = new JButton("En to Vi");
+        searchPanel.add(enSearch, BorderLayout.WEST);
+        enSearch.setFont(new Font("Arial", Font.BOLD, 10));
+        enSearch.addActionListener(searchClick);
 
         JLabel vflatLogo = new JLabel("");
         vflatLogo.setIcon(new ImageIcon("VFlat.png"));
@@ -88,5 +109,6 @@ public class DictionaryApplication extends JFrame {
         arrowHead.setIcon(new ImageIcon("definition.png"));
         arrowHead.setBounds(10, 263, 48, 41);
         contentPane.add(arrowHead);
+
     }
 }
