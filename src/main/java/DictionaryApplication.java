@@ -7,7 +7,7 @@ import java.net.URL;
 
 public class DictionaryApplication extends JFrame {
     public JPanel contentPane;
-    public JTextField enterYourWord;
+    public JTextPane enterYourWord = new JTextPane();
     //public JLabel answer = new JLabel("\r\n");
     JTextPane answer = new JTextPane();
     JButton searchButton = new JButton("");
@@ -55,9 +55,11 @@ public class DictionaryApplication extends JFrame {
         panel.add(alphabetImage, BorderLayout.WEST);
         alphabetImage.setIcon(new ImageIcon("abc.png"));
 
-        enterYourWord = new JTextField();
-        panel.add(enterYourWord, BorderLayout.CENTER);
-        enterYourWord.setColumns(10);
+        JScrollPane enterYourWordScrollPane = new JScrollPane();
+        panel.add(enterYourWordScrollPane, BorderLayout.CENTER);
+
+        //panel.add(enterYourWord, BorderLayout.CENTER);
+        enterYourWordScrollPane.setViewportView(enterYourWord);
         enterYourWord.setFont(font);
 
 
@@ -70,6 +72,10 @@ public class DictionaryApplication extends JFrame {
         vflatLogo.setBounds(-146, 0, 717, 199);
         contentPane.add(vflatLogo);
 
+        //tạo 1 scroll pane cho thanh hiện ra kết quả
+        JScrollPane answerScrollPane = new JScrollPane();
+        answerScrollPane.setBounds(68, 268, 367, 285);
+        contentPane.add(answerScrollPane);
 
         //answer.setBounds(68, 209, 381, 35);
         //contentPane.add(answer);
@@ -77,7 +83,7 @@ public class DictionaryApplication extends JFrame {
         contentPane.add(answer);
         answer.setFont(font);
         answer.setEditable(false);
-
+        answerScrollPane.setViewportView(answer);
 
         JLabel arrowHead = new JLabel("");
         arrowHead.setIcon(new ImageIcon("definition.png"));
