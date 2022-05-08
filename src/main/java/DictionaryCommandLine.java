@@ -5,19 +5,19 @@ public class DictionaryCommandLine {
     static DictionaryManagement myManage = new DictionaryManagement();
 
     //hàm in ra tất cả các từ đã được thêm vào từ điển và giải nghĩa của nó
-    public static void showAllWords(Dictionary myDictionary) {
+    public static void showAllWords() {
         System.out.println("No\t| English\t | Vietnamese");
-        for (int i = 0; i < myDictionary.words.size(); i++) {
+        for (int i = 0; i < myManage.myDictionary.words.size(); i++) {
             System.out.print(i + 1);
-            System.out.println("\t|" + myDictionary.words.get(i).getWord_target()
-                    + "\t\t|" + myDictionary.words.get(i).getWord_explain());
+            System.out.println("\t|" + myManage.myDictionary.words.get(i).getWord_target()
+                    + "\t\t|" + myManage.myDictionary.words.get(i).getWord_explain());
         }
     }
 
     //hàm có chứ năng gọi hàm insertFromFile() và showAllWord()
     public static void dictionaryBasic() {
         myManage.insertFromCommandline();
-        showAllWords(myManage.myDictionary);
+        showAllWords();
     }
 
     //tìm các từ tiếng Anh chứa các kí tự đã nhập
@@ -42,12 +42,8 @@ public class DictionaryCommandLine {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        showAllWords(myManage.myDictionary);
+        showAllWords();
         myManage.dictionaryLookup();
-    }
-
-    public void test() {
-        String test = "Hello";
     }
 
     public static void main(String[] args) {
@@ -55,7 +51,7 @@ public class DictionaryCommandLine {
             DictionaryCommandLine.myManage.insertFromFile();
             Word x = new Word("class", "lớp học");
             DictionaryCommandLine.myManage.addWord(x);
-            DictionaryCommandLine.showAllWords(myManage.myDictionary);
+            DictionaryCommandLine.showAllWords();
             DictionaryCommandLine.myManage.dictionaryLookup();
             DictionaryCommandLine.dictionarySearcher();
             DictionaryCommandLine.myManage.dictionaryExportToFile();
@@ -64,4 +60,5 @@ public class DictionaryCommandLine {
         }
     }
 }
+
 
