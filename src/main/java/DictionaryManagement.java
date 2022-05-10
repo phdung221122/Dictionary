@@ -77,18 +77,18 @@ public class DictionaryManagement {
 
     //xuất dữ liệu ra file out.txt file này đc lưu ở thư mục Dictionary
     public void dictionaryExportToFile() {
-       try {
-           FileWriter myWriter = new FileWriter("out.txt");
-           for (int i = 0; i < myDictionary.words.size(); i++) {
-               myWriter.write(myDictionary.words.get(i).getWord_target() + "-" + myDictionary.words.get(i).getWord_explain());
-               myWriter.write("\n");
-           }
-           System.out.println("\nđã viết thành công");
-           myWriter.close();
-       } catch (IOException e) {
-           System.out.println(e.getMessage());
-           e.printStackTrace();
-       }
+        try {
+            FileWriter myWriter = new FileWriter("out.txt");
+            for (int i = 0; i < myDictionary.words.size(); i++) {
+                myWriter.write(myDictionary.words.get(i).getWord_target() + "-" + myDictionary.words.get(i).getWord_explain());
+                myWriter.write("\n");
+            }
+            System.out.println("\nđã viết thành công");
+            myWriter.close();
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+        }
     }
 
 }
