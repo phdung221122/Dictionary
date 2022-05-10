@@ -28,7 +28,6 @@ public class Translator {
             response.append(inputLine);
         }
         in.close();
-        if (response.toString().compareTo(text) == 0) return "*Từ bạn nhập không có nghĩa*";
         return response.toString();
     }
 
